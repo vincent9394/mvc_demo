@@ -2,7 +2,7 @@ import express from "express";
 // import { Request, Response } from "express";
 import expressSession from "express-session";
 import path from "path";
-import { isLoggedIn } from "./guards";
+import { isLoggedInHTML } from "./guards";
 
 import dotenv from "dotenv";
 dotenv.config();
@@ -45,7 +45,7 @@ app.use(API_VERSION, routes);
 // });
 
 app.use(express.static(path.join(__dirname, "public")));
-app.use(isLoggedIn, express.static(path.join(__dirname, "private")));
+app.use(isLoggedInHTML, express.static(path.join(__dirname, "private")));
 
 const PORT = 8080;
 app.listen(PORT, () => {

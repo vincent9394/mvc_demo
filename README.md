@@ -254,3 +254,27 @@ Batch 1 run: 1 migrations
 ```
 
 -   [x] check database
+
+&nbsp;
+
+## Demo for Register
+
+1. Server - API
+2. Use Postman to test the API
+3. FE - Register Page
+
+### Server - API
+
+-   [x] create dummy route handler in `UserController`
+
+-   [x] config `routes.ts`
+
+-   [x] use Postman to test the dummy route
+
+-   [x] config route handler logic
+
+### Use Postman to test the API
+
+-   [x] use Postman to test the completed register route
+
+### FE - Register Page
