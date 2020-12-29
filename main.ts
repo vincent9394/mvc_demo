@@ -3,7 +3,6 @@ import express from "express";
 import expressSession from "express-session";
 import path from "path";
 import { isLoggedIn } from "./guards";
-
 import dotenv from "dotenv";
 dotenv.config();
 
