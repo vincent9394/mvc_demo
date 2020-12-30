@@ -1,5 +1,6 @@
 import * as Knex from "knex";
 import { hashPassword } from "../hash";
+import { USER_TYPES_IDS } from "../utils/variables";
 
 export async function seed(knex: Knex): Promise<void> {
     // Deletes ALL existing entries
@@ -8,7 +9,10 @@ export async function seed(knex: Knex): Promise<void> {
 
     // Inserts seed entries
     const [adminID, normalID] = await knex("user_types")
-        .insert([{ type: "admin" }, { type: "normal" }])
+        .insert([
+            { id: USER_TYPES_IDS.ADMIN, type: "admin" },
+            { id: USER_TYPES_IDS.NORMAL, type: "normal" },
+        ])
         .returning("id");
 
     await knex("users").insert([
