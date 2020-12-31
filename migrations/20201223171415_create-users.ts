@@ -15,6 +15,9 @@ export async function up(knex: Knex): Promise<void> {
         table.foreign("user_types_id").references("user_types.id");
         table.timestamps(false, true);
     });
+    // await knex.schema.alterTable("users", (table) => {
+    //     table.string("email").notNullable().unique();
+    // })
 }
 
 export async function down(knex: Knex): Promise<void> {
